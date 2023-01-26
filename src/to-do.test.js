@@ -1,5 +1,4 @@
-/** @jest-environment jsdom */
-import Display from './to-do.js';
+import display from './to-do'
 
 describe('Add new task', () => {
   beforeEach(() => {
@@ -20,8 +19,8 @@ describe('Add new task', () => {
   });
 
   test('Adding todo object to the local storage', () => {
-    const addTodoOnSpy = jest.spyOn(Display, 'addTodo');
-    Display.addTodo();
+    const addTodoOnSpy = jest.spyOn(display, 'addTodo');
+    display.addTodo();
     expect(addTodoOnSpy).toHaveBeenCalledTimes(1);
     const result = JSON.parse(window.localStorage.getItem('todo'));
     expect(result.length).toBe(1);
@@ -29,8 +28,8 @@ describe('Add new task', () => {
   });
 
   test('Adding task to the DOM', () => {
-    const addTodoOnSpy = jest.spyOn(Display, 'addTodo');
-    Display.addTodo();
+    const addTodoOnSpy = jest.spyOn(display, 'addTodo');
+    display.addTodo();
     expect(addTodoOnSpy).toHaveBeenCalledTimes(1);
     const result = document.querySelector('.to-do-check');
     expect(result).toBeDefined();
@@ -70,26 +69,26 @@ describe('Delete task item', () => {
   });
 
   test('Remove task from local storage', () => {
-    const removeTodoOnSpy = jest.spyOn(Display, 'removeTodo');
-    Display.removeTodo(1);
+    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
+    display.removeTodo(1);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(1);
     const result = JSON.parse(window.localStorage.getItem('todo'));
     expect(result).toHaveLength(1);
   });
 
   test('Remove two tasks from local storage', () => {
-    const removeTodoOnSpy = jest.spyOn(Display, 'removeTodo');
-    Display.removeTodo(0);
-    Display.removeTodo(0);
+    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
+    display.removeTodo(0);
+    display.removeTodo(0);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
     const result = JSON.parse(window.localStorage.getItem('todo'));
     expect(result).toHaveLength(0);
   });
 
   test('Remove tasks from the DOM', () => {
-    const removeTodoOnSpy = jest.spyOn(Display, 'removeTodo');
-    Display.removeTodo(0);
-    Display.removeTodo(0);
+    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
+    display.removeTodo(0);
+    display.removeTodo(0);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
     const result = document.querySelector('.to-do-check');
     expect(result).toBeNull();
