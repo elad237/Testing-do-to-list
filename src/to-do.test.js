@@ -1,10 +1,11 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import display from './to-do'
 
 describe('Add new task', () => {
   beforeEach(() => {
-    localStorage.clear();
-    jest.clearAllMocks();
-    localStorage.setItem.mockClear();
     document.body.innerHTML = `
     <div class="todo-body"></div>
     <div class="todo-edit flex">
@@ -22,7 +23,7 @@ describe('Add new task', () => {
     const addTodoOnSpy = jest.spyOn(display, 'addTodo');
     display.addTodo();
     expect(addTodoOnSpy).toHaveBeenCalledTimes(1);
-    const result = JSON.parse(window.localStorage.getItem('todo'));
+    const result = JSON.parse(localStorage.getItem('todo'));
     expect(result.length).toBe(1);
     expect(result[0].text).toBe('visit the gym');
   });
@@ -38,9 +39,6 @@ describe('Add new task', () => {
 
 describe('Delete task item', () => {
   beforeEach(() => {
-    localStorage.clear();
-    jest.clearAllMocks();
-    localStorage.setItem.mockClear();
     document.body.innerHTML = `
     <div class="todo-body"></div>
     <div class="todo-edit flex">
@@ -72,7 +70,7 @@ describe('Delete task item', () => {
     const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
     display.removeTodo(1);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(1);
-    const result = JSON.parse(window.localStorage.getItem('todo'));
+    const result = JSON.parse(localStorage.getItem('todo'));
     expect(result).toHaveLength(1);
   });
 
@@ -81,7 +79,7 @@ describe('Delete task item', () => {
     display.removeTodo(0);
     display.removeTodo(0);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
-    const result = JSON.parse(window.localStorage.getItem('todo'));
+    const result = JSON.parse(localStorage.getItem('todo'));
     expect(result).toHaveLength(0);
   });
 
