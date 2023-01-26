@@ -58,7 +58,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 ```
-git clone ....
+git clone https://github.com/elad237/Testing-do-to-list.git
 ```
 
 ### Install
@@ -91,7 +91,7 @@ GitHub: [@githubhandle](https://github.com/elad237)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](...).
+Feel free to check the [issues page](https://github.com/elad237/Testing-do-to-list/issues).
 
 ## Show your support
 
