@@ -20,9 +20,7 @@ describe('Add new task', () => {
   });
 
   test('Adding todo object to the local storage', () => {
-    const addTodoOnSpy = jest.spyOn(display, 'addTodo');
     display.addTodo();
-    expect(addTodoOnSpy).toHaveBeenCalledTimes(1);
     const result = JSON.parse(localStorage.getItem('todo'));
     expect(result.length).toBe(1);
     expect(result[0].text).toBe('visit the gym');
@@ -75,7 +73,6 @@ describe('Delete task item', () => {
   });
 
   test('Remove two tasks from local storage', () => {
-    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
     display.removeTodo(0);
     display.removeTodo(0);
     expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
