@@ -72,19 +72,20 @@ describe('Delete task item', () => {
     expect(result).toHaveLength(1);
   });
 
-  test('Remove two tasks from local storage', () => {
+  test('Remove three tasks from local storage', () => {
+    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
+    display.removeTodo(1);
     display.removeTodo(0);
-    display.removeTodo(0);
-    expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
+    expect(removeTodoOnSpy).toHaveBeenCalledTimes(3);
     const result = JSON.parse(localStorage.getItem('todo'));
     expect(result).toHaveLength(0);
   });
 
   test('Remove tasks from the DOM', () => {
     const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
+    display.removeTodo(1);
     display.removeTodo(0);
-    display.removeTodo(0);
-    expect(removeTodoOnSpy).toHaveBeenCalledTimes(2);
+    expect(removeTodoOnSpy).toHaveBeenCalledTimes(3);
     const result = document.querySelector('.to-do-check');
     expect(result).toBeNull();
   });
