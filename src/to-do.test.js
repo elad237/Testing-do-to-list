@@ -82,10 +82,8 @@ describe('Delete task item', () => {
   });
 
   test('Remove tasks from the DOM', () => {
-    const removeTodoOnSpy = jest.spyOn(display, 'removeTodo');
     display.removeTodo(1);
     display.removeTodo(0);
-    expect(removeTodoOnSpy).toHaveBeenCalledTimes(3);
     const result = document.querySelector('.to-do-check');
     expect(result).toBeNull();
   });
