@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import display from './to-do.js'
+import display from './to-do.js';
 
 describe('Add new task', () => {
   beforeEach(() => {
