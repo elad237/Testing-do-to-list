@@ -80,12 +80,17 @@ If you want to work with Chrome Developer Tools, simply run the HTML document in
 
 ### Deployment
 
-## Author
+## Authors
 
 👤 **TUMBU BARTHOLOMEW ELAD**
 GitHub: [@githubhandle](https://github.com/elad237)
 - Twitter: [@twitterhandle](https://twitter.com/Elad59380989)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tumbu-elad-896ab2183/)
+
+👤 **ALHASSAN (NEWTON) OSMAN**
+GitHub: [@flemton](https://github.com/flemton)
+- Twitter: [@oalhassan847](https://twitter.com/oalhassan847)
+- LinkedIn: [Alhassan Osman](https://www.linkedin.com/in/alhassan-o-83039a80/)
 
 ## 🤝 Contributing
 
@@ -99,6 +104,12 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse for proving this platform.
+- We thank Microverse for proving this platform.
 
-## 📝 License
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
